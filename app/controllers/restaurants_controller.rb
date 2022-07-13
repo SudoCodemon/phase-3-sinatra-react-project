@@ -21,12 +21,13 @@ class RestaurantsController < ApplicationController
     find_restaurant
     @restaurant.to_json({ include: :reviews, methods: :average_score })
   end
-    post "/restaurants" do 
-        restaurant = Restaurant.create(restaurant_params)
-        restaurant.to_json
-    end
-    
-    private 
+
+  post '/restaurants' do
+    restaurant = Restaurant.create(restaurant_params)
+    restaurant.to_json
+  end
+
+  private
     def restaurant_params
         allows_params = %(name description category img)
         params.select {|k,v| allowed_params.include(k)}
@@ -35,4 +36,3 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.find(params[:id])
     end
 end
-
