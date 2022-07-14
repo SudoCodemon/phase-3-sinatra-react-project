@@ -5,15 +5,6 @@ class RestaurantsController < ApplicationController
       # can we get this to return most recent review based on time?
       methods.merge!({ include: :reviews })
     end
-    if params.include?('friends_only')
-      # user id in params
-      user = User.all.find([params['friends_only']])
-      # console.log(user.followers)
-      return user.to_json({ methods: [:followers] })
-      # set = friends.reviews.restaurants.id
-      # Restaurant.all.where(id inside set).tojson(methods)
-    end
-
     methods.merge!({ methods: :average_score })
     Restaurant.all.to_json(methods)
   end
