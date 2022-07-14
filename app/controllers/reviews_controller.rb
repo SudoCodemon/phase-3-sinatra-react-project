@@ -25,8 +25,7 @@ class ReviewsController < ApplicationController
         review.to_json
     end
     delete "/reviews/:id" do
-        find_review
-        Review.delete(@review)
+        Review.destroy(params[:id])
     end
     private 
     def review_params
