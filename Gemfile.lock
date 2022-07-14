@@ -6,6 +6,8 @@ GEM
     activerecord (6.1.4)
       activemodel (= 6.1.4)
       activesupport (= 6.1.4)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activerecord-reset-pk-sequence (0.2.1)
     activesupport (6.1.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -80,6 +82,7 @@ GEM
     sinatra-activerecord (2.0.23)
       activerecord (>= 4.1)
       sinatra (>= 1.0)
+    sqlite3 (1.4.4)
     thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -95,6 +98,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 6.1)
+  activerecord-postgresql-adapter
   activerecord-reset-pk-sequence
   database_cleaner (~> 2.0)
   faker
@@ -111,6 +115,7 @@ DEPENDENCIES
   seed
   sinatra (~> 2.1)
   sinatra-activerecord (~> 2.0)
+  sqlite3
   thin (~> 1.8)
 
 BUNDLED WITH
