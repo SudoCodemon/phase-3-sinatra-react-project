@@ -8,7 +8,7 @@ class Restaurant < ActiveRecord::Base
 
   def self.reviewed_by(user_id)
     # Review.where(user_id: user_id).map { |r| r.restaurant }
-    select { |r| r.reviews.where(user_id: user_id).count > 0 }
+    reviewed_restaurants = select { |r| r.reviews.where(user_id: user_id).count > 0 }
   end
 
   def self.reviewed_by_friends(user_id)
