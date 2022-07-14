@@ -1,11 +1,11 @@
 # Yelp with Friends
-> Our goal was to build a web basic API with Sinatra and Active Record to support a React frontend
+> Our goal was to build a backend server supporting with basic API to support a React frontend
 > Live demo [_here_](https://www.example.com). <!-- update link once hosted -->
 
 ## Table of Contents
 * [General Info](#general-information)
-* [Technologies Used](#technologies-used)
 * [GitHub Repos](#github-repos)
+* [Technologies Used](#technologies-used)
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
@@ -18,7 +18,7 @@
 
 
 ## General Information
-This project, part of Flatiron Software Engineering track, phase 3, focused on developing a backend server with API access.  We worked as a team of three to develop both the frontend and backend servers in one week.
+This project, part of Flatiron Software Engineering track, Phase 3, focused on developing a backend server with API access.  We worked as a team of three to develop both the frontend and backend servers in one week.
 
 ## GitHub Repos
 - [Backend Server](https://github.com/hkassow/phase-3-sinatra-react-project)
@@ -26,16 +26,20 @@ This project, part of Flatiron Software Engineering track, phase 3, focused on d
 
 
 ## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
+### Backend Server
+- Sinatra  ~> version 2.1
+- Active Record ~> version 6.1
+- SQLite3 ~> version 1.4
 
+### Frondend Server
 
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+### Backend API Endpoints
+| Endpoint | Params | Description |
+|----- | ------ | ------|
+| /restaurants | include_review | returns all restaurants.  If include_review is specified, reviews are included with the restaurants
+| /restaurants/:id |  | returns a specific restaurant.
+| /restaurants/user/:id | include_review | returns restaurants reviewed by the specified user.  If include_review is specified, reviews are included with the restaurants
 
 
 ## Screenshots
