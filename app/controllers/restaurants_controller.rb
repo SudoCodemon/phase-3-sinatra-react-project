@@ -29,13 +29,8 @@ class RestaurantsController < ApplicationController
     methods.merge!({ methods: :average_score })
     json_all_reviews = @restaurants.to_json(methods)
     restaurants = JSON.parse json_all_reviews
-    if params.include?('friend_reviewed')
-      # Update to look for reviews with user_id in set of friend ids
-      restaurants.each { |r| r['reviews'] = r['reviews'].select { |rev| rev['user_id'] == params[:id].to_i } }
-    else
-      restaurants.each { |r| r['reviews'] = r['reviews'].select { |rev| rev['user_id'] == params[:id].to_i } }
-    end
-
+    review_ids = params.include?('friend_reviewed') ? Friend.following_ids(params[:id].to_i) : [params[:id].to_i]
+    restaurants.each { |r| r['reviews'] = r['reviews'].select { |rev| review_ids.include?(rev['user_id']) } }
     restaurants.to_json
   end
 
