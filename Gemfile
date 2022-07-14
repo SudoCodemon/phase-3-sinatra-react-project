@@ -27,7 +27,9 @@ gem "sinatra-activerecord", "~> 2.0"
 # Run common tasks from the command line
 # https://github.com/ruby/rake
 gem "rake", "~> 13.0"
-gem 'sqlite3'
+group :development do
+   'sqlite3'
+end
 group :production do 
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
