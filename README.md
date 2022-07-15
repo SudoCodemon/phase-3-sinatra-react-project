@@ -121,4 +121,6 @@ Frontend:
 
 ## Acknowledgements
 - This project was based on [this project assignment](https://github.com/learn-co-curriculum/phase-3-sinatra-react-project).
-
+The following were used as references when creating our self-join table:
+- [Self Joins - RubyOnRails Guide](https://guides.rubyonrails.org/association_basics.html#self-joins)
+- [Active Record Many-to-Many self join table](https://medium.com/@jbmilgrom/active-record-many-to-many-self-join-table-e0992c27c1e)
